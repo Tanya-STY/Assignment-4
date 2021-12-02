@@ -5,14 +5,14 @@ public class Driver_Ticket {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Welcome to The Ticketbooth Simulator!\n");
+		System.out.println("Welcome to The Ticketbooth Simulator!");
 		Boolean valid;
 		String ans= "";
 	
 
 	do 
 	{
-		System.out.println("What would you like to do?" +
+		System.out.println("\nWhat would you like to do?" +
 						   "\n\t 1. See the content of all Ticketbooths" +
 						   "\n\t 2. See the content of one Ticketbooth" +
 						   "\n\t 3. List Ticketbooths with same amount of tickets' values" +
@@ -87,12 +87,13 @@ public class Driver_Ticket {
 		
 		case 0:
 		{	
+		 	System.out.println("Thank you for using The Ticketbooth Simulator!");
 			break;
 		}
 		
 		}}
 	while(valid ==false || ans.equals("yes"));
 	
-	
+	sc.close();
 	}
 	}
