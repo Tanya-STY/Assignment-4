@@ -1,24 +1,22 @@
-
 public class OPUSCard {
 	
-	static String OPUSCard;
-	static String card_holder;
-	static int    exp_month;
-	
-	static int exp_year;
+	private String card_type;
+	private String card_holder;
+	private int    exp_month;
+	private int exp_year;
 	
 	public OPUSCard()
 	{
-		this.OPUSCard    = null;
+		this.card_type    = null;
 		this.card_holder = null;
 		this.exp_month   = 0;
 		this.exp_year    = 0;
 	}
 	
 	//constructor with 4 parameters
-	public OPUSCard(String card_holder, int exp_month, int exp_year)
+	public OPUSCard(String card_type, String card_holder, int exp_month, int exp_year)
 	{
-		this.OPUSCard    = OPUSCard;
+		this.card_type   = card_type;
 		this.card_holder = card_holder;
 		this.exp_year    = exp_year;
 		
@@ -30,17 +28,20 @@ public class OPUSCard {
 			this.exp_month = exp_month;
 	}
 	
+ //copy constructor
 	public  OPUSCard(OPUSCard b)
 	{
-		this.OPUSCard    = b.OPUSCard;
+		this.card_type   = b.card_type;
 		this.card_holder = b.card_holder;
 		this.exp_month   = b.exp_month;
 		this.exp_year    = b.exp_year;
 	}
+
+	//accessor and mutators methods
 	
-	public String getCard_Opus()
+	public String getCard_Type()
 	{
-		return OPUSCard;
+		return card_type;
 	}
 	
 	public String getCard_Holder()
@@ -78,31 +79,31 @@ public class OPUSCard {
 	public String toString()
 	{
 		if(exp_month<10) 
-			return "The type of OPUS card: " + OPUSCard +
+			return "The type of OPUS card: " + card_type +
 					"\n The name of the owner: " + card_holder +
 					"\n The expiry date: 0" + exp_month + "/" + exp_year;
 		
 		else
-			return "The type of OPUS card: " + OPUSCard +
+			return "The type of OPUS card: " + card_type +
 					"\n The name of the owner: " + card_holder +
 					"\n The expiry date: " + exp_month + "/" + exp_year;
 		
 	}
 	
-	public boolean equals(Object obj)
+	public boolean Equal(OPUSCard something)
 	{
-		OPUSCard t = (OPUSCard) obj;
-		if((this.OPUSCard.equals(t.OPUSCard)) &&
-				(this.card_holder.equals(t.card_holder)) && 
-				(this.exp_month == t.exp_month) && 
-				(this.exp_year == t.exp_year))
-		{
-		return true;
-		}
-		return false;
+		
+		return((this.card_type == something.card_type) &&
+				(this.card_holder == something.card_holder) && 
+				(this.exp_month == something.exp_month) && 
+				(this.exp_year == something.exp_year));
 	}
+		
+	
 	
 }
+		
+	
 
 	
 
