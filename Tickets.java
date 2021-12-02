@@ -124,4 +124,14 @@ public class Tickets {
 			this.nb_WeeklyTicket  + "weekly tickets\n";
 	}
 	
+	//equal method
+	public boolean equals (Tickets same)
+	{
+	return (this.nb_RegTicket   == same.nb_RegTicket &&
+		   this.nb_JunTicket    == same.nb_JunTicket &&
+		   this.nb_SenTicket    == same.nb_SenTicket &&
+		   this.nb_DailyTicket  == same.nb_DailyTicket &&
+		   this.nb_WeeklyTicket == same.nb_WeeklyTicket);
+	}
+	
 }
