@@ -13,7 +13,7 @@ public class Ticketbooth {
 	{
 		Ticket = new Tickets(Ticket);
 		Card = new OPUSCard[Cards.length]; 
-		for (int i = 0; i < Card.length; i++)
+		for (int i = 0; i < Cards.length; i++)
 		{
 			Card[i] = Cards[i];
 		}
@@ -114,26 +114,35 @@ public class Ticketbooth {
 	
 	public String toString() 
 	{
-		StringBuilder sc = new StringBuilder();
-		sc.append(" ");
-		sc.append(Ticket);
-		sc.append('\n');
+		StringBuilder breakdown = new StringBuilder();
+		breakdown.append(" ");
+		breakdown.append(Ticket);
+		breakdown.append('\n');
 		
 		if (Card.length == 0)
 		{
-			sc.append("\nNo OPUS Cards");
+			breakdown.append("\nNo OPUS Cards");
+			return breakdown.toString();
+		}
+		else if (Card[0] == null) 
+		{
+			breakdown.append("No OPUS Cards");
+			return breakdown.toString();
 		}
 		else
+		{
 			for (int i = 0; i < Card.length; i++)
 			{
-				sc.append("\n");
-				sc.append(Card[i].toString());
+				breakdown.append("\n");
+				breakdown.append(Card[i].toString());
 			}
 	
-	return sc.toString();			
-	}	
-public String breakdown_toString()
+			return breakdown.toString();			
+		}	
+	}
+	public String breakdown_toString()
 	{
 		return Ticket.toString();
 	}
+
 }
