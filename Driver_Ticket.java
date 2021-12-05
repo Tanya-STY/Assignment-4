@@ -13,25 +13,25 @@ public class Driver_Ticket {
 		// the same number of OPUS CARDS.
 		Tickets T1 = new Tickets(4, 3, 2, 1, 0); // 33.5$
 		Tickets T2 = new Tickets(4, 3, 2, 1, 0);
-		OPUSCard O1 = new OPUSCard("STM", OPUSCard.card_holder, 2023, 10);
-		OPUSCard O2 = new OPUSCard("STM", OPUSCard.card_holder, 2022, 11);
-		OPUSCard O3 = new OPUSCard("STM", OPUSCard.card_holder, 2023, 10);
-		OPUSCard O4 = new OPUSCard("STM", OPUSCard.card_holder, 2022, 11);
+		OPUSCard O1 = new OPUSCard("STL-", "M. Cola-", 8, 2024);
+		OPUSCard O2 = new OPUSCard("RTL-", "C. Venus-", 3, 2025);
+		OPUSCard O3 = new OPUSCard("STL-", "Z. Poker", 10, 2022);
+		OPUSCard O4 = new OPUSCard("RTL-", "F. Max", 12, 2021);
 		OPUSCard[] array_1 = { O1, O2 };
 		OPUSCard[] array_2 = { O3, O4 };
 		Ticketbooth Tb1 = new Ticketbooth(T1, array_1);
 		Ticketbooth Tb2 = new Ticketbooth(T2, array_2);
 
 		Tickets T3 = new Tickets(1, 4, 0, 2, 0); // 33.5 $, t3 = t1 (value)
-		OPUSCard O5 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
-		OPUSCard O6 = new OPUSCard("TMS",OPUSCard.card_holder, 2023, 10);
-		OPUSCard O7 = new OPUSCard("MTS",OPUSCard.card_holder, 2023, 10);
-		OPUSCard O8 = new OPUSCard("MTS",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O5 = new OPUSCard("TRAMREM","S. EaFL", 11, 2021);
+		OPUSCard O6 = new OPUSCard("TMS","S. Markis", 2023, 10);
+		OPUSCard O7 = new OPUSCard("MTS","T. So", 2023, 10);
+		OPUSCard O8 = new OPUSCard("MTS","I. Fahmy", 2023, 10);
 		OPUSCard[] array_3 = { O5, O6, O7, O8 };
 		Ticketbooth Tb3 = new Ticketbooth(T3, array_3);
 		
-		Tickets T4 = new Tickets();
-		Tickets T5 = new Tickets(0,0,40,0,0);
+		Tickets T4 = new Tickets(0,0,0,0,0);
+		Tickets T5 = new Tickets(0,0,0,0,0);
 	    OPUSCard[] array_4 = {};
 	    OPUSCard[] array_5 = {};
 	    Ticketbooth Tb4 = new Ticketbooth(T4, array_4);
@@ -61,11 +61,11 @@ public class Driver_Ticket {
 			case 1: {
 				System.out.println("Content of each Ticketbooth:");
 				System.out.println("-----------------------------");
-				System.out.println("\nTicketbooth #0\n----------------------\n" + Tb1);
-				System.out.println("\nTicketbooth #1\n----------------------" + Tb2);
-				System.out.println("\nTicketbooth #2\n----------------------" + Tb3);
-				System.out.println("\nTicketbooth #3\n----------------------" + Tb4);
-				System.out.println("\nTicketbooth #3\n----------------------" + Tb5);
+				System.out.println("\nTicketbooth #0\n----------------------" + Tb1.toString());
+				System.out.println("\nTicketbooth #1\n----------------------" + Tb2.toString());
+				System.out.println("\nTicketbooth #2\n----------------------" + Tb3.toString());
+				System.out.println("\nTicketbooth #3\n----------------------" + Tb4.toString());
+				System.out.println("\nTicketbooth #3\n----------------------" + Tb5.toString());
 				break;
 			}
 
@@ -224,16 +224,20 @@ public class Driver_Ticket {
 					Tb_choice = sc.nextInt()-1;
 					
 				//ticketbooth #0	
-					if(Tb_choice ==0)
+					if(Tb_choice == 0)
 					{
-						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print("Please enter the following information so that we may complete the transaction - ");
 						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
 						String tb6_type = sc.next();
 						System.out.print(" --> Full name on OPUS card: ");
 						String tb6_name = sc.nextLine();
-						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						System.out.println();
+						System.out.print("\n --> Expiry month number and year (separate by a space): ");
 						int tb6_expMonth = sc.nextInt();
+						sc.nextLine();
+						
 						int tb6_expYear = sc.nextInt();
+						sc.nextLine();
 						
 						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
 						int length_card = Tb1.addOpusCard(newOpus);
@@ -329,8 +333,6 @@ public class Driver_Ticket {
 					}
 					
 				}
-				
-				
 				break;
 			}
 
