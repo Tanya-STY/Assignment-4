@@ -59,7 +59,7 @@ public class Driver_Ticket {
 			switch (choice) {
 
 			case 1: {
-				System.out.println("Content of all Ticketbooth:");
+				System.out.println("Content of each Ticketbooth:");
 				System.out.println("-----------------------------");
 				System.out.println("\nTicketbooth #0\n----------------------\n" + Tb1);
 				System.out.println("\nTicketbooth #1\n----------------------" + Tb2);
