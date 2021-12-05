@@ -15,7 +15,7 @@ public class Ticketbooth {
 		Card = new OPUSCard[Cards.length]; 
 		for (int i = 0; i < Card.length; i++)
 		{
-			Cards[i] = Card[i];
+			Card[i] = Cards[i];
 		}
 	}
 	// method that verifies if the values of two ticketbooths are the same
