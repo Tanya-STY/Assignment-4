@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Ticketbooth {
 	
 	private Tickets Ticket;
@@ -11,13 +9,13 @@ public class Ticketbooth {
 		Card = new OPUSCard[0]; 
 	}
 
-	public Ticketbooth(Tickets Ticket, OPUSCard[] Card) 
+	public Ticketbooth(Tickets Ticket, OPUSCard[] Cards) 
 	{
 		Ticket = new Tickets(Ticket);
 		Card = new OPUSCard[Card.length]; 
 		for (int i = 0; i < Card.length; i++)
 		{
-			Card[i] = opusCard[i];
+			Cards[i] = Card[i];
 		}
 	}
 	// method that verifies if the values of two ticketbooths are the same
@@ -60,7 +58,7 @@ public class Ticketbooth {
 		
 		else {
 			OPUSCard[] addition = new OPUSCard[Card.length + 1];
-			for (int i = 0; i < Card.length, i++) {
+			for (int i = 0; i < Card.length; i++) {
 				addition[i] = Card[i];
 			}
 			addition[addition.length - 1] = cardA;
@@ -80,7 +78,7 @@ public class Ticketbooth {
 		}
 		else {
 			OPUSCard[] addition = new OPUSCard[Card.length-1];
-			for (int i = 0; i < (card.length); i++)
+			for (int i = 0; i < (Card.length); i++)
 			{
 				if (i != minus)
 				{
@@ -95,15 +93,15 @@ public class Ticketbooth {
 	// method to update the expiry month and year of an opus card
 	public void updateExpiry (int year, int month, int y)
 	{
-		Card[i].setExp_Month(month);
-		Card[i].setExp_Year(year);
+		→Card[i].setExp_Month(month);
+		→Card[i].setExp_Year(year);
 	}
 	
 	// Method that adds tickets to ticket booth
 	public double  addTickets (int a, int b, int c, int d, int e) 
 	{
 		Ticket.addTickets(a,b,c,d,e);
-		return ticketsTotal();
+		return Ticket.ticketsTotal();
 	}
 	// method that verifies if the total value of tickets and the number of opus cards tickets of two ticketbooth objects are equal
 	public boolean equalAll(Ticketbooth one, Ticketbooth two) {
@@ -116,7 +114,7 @@ public class Ticketbooth {
 	
 	public String toString() 
 	{
-		StringBuilder sc = new StrinBuilder("").append(Ticket).append('\n');
+		StringBuilder sc = new StringBuilder("").append(Ticket).append('\n');
 		if (Card.length == 0)
 		{
 			sc.append("\nNo OPUS Cards");
@@ -126,7 +124,8 @@ public class Ticketbooth {
 			{
 				sc.append("\n").append(Card[i].toString());
 			}
-	}
+	
 	return sc.toString();			
-}	
+	}	
+
 }
