@@ -1,8 +1,8 @@
 public class OPUSCard {
 	
 	private String card_type;
-	static String card_holder;
-	private int    exp_month;
+	private String card_holder;
+	private int exp_month;
 	private int exp_year;
 	
 	public OPUSCard()
@@ -83,7 +83,6 @@ public class OPUSCard {
 		
 		else
 			return card_type + " - " + card_holder + " - " + exp_month + "/" + exp_year;
-					
 		
 	}
 	
@@ -95,12 +94,8 @@ public class OPUSCard {
 				(this.exp_month == something.exp_month) && 
 				(this.exp_year == something.exp_year));
 	}
-		
-	
 	
 }
-		
-	
 
 	
 
