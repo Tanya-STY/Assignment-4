@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DriverTicketbooth {
+public class Driver_Ticket {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -13,10 +13,10 @@ public class DriverTicketbooth {
 		// the same number of OPUS CARDS.
 		Tickets T1 = new Tickets(4, 3, 2, 1, 0); // 33.5$
 		Tickets T2 = new Tickets(4, 3, 2, 1, 0);
-		OPUSCard O1 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
-		OPUSCard O2 = new OPUSCard("STM",OPUSCard.card_holder, 2022, 11);
-		OPUSCard O3 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
-		OPUSCard O4 = new OPUSCard("STM",OPUSCard.card_holder, 2022, 11);
+		OPUSCard O1 = new OPUSCard("STM", OPUSCard.card_holder, 2023, 10);
+		OPUSCard O2 = new OPUSCard("STM", OPUSCard.card_holder, 2022, 11);
+		OPUSCard O3 = new OPUSCard("STM", OPUSCard.card_holder, 2023, 10);
+		OPUSCard O4 = new OPUSCard("STM", OPUSCard.card_holder, 2022, 11);
 		OPUSCard[] array_1 = { O1, O2 };
 		OPUSCard[] array_2 = { O3, O4 };
 		Ticketbooth Tb1 = new Ticketbooth(T1, array_1);
@@ -72,65 +72,10 @@ public class DriverTicketbooth {
 				break;
 			}
 
-			case 2: {	
-			boolean correct;
-			System.out.print("Which Ticketbooth do you want to see the content of? (Enter number 0 to 4): "); 
-			
-			do
-			{
-			int choice_tb2 = sc.nextInt();
-				if(choice_tb2>=0 && choice_tb2<=4)
-					correct = true;
-				else
-				{
-					correct=false;
-					System.out.println("Sorry but there is no Ticketbooth number " + choice_tb2);
-				}
-				
-			switch(choice_tb2)
-				{
-				case 0:
-				{
-					System.out.println("\nTicketbooth #0\n----------------------\n"+ Tb1);	
-					correct = false;
-					break;
-				}
-				
-				case 1:
-				{
-					System.out.println("\nTicketbooth #1\n----------------------\n"+ Tb2 );
-					correct = false;
-					break;
-				}
-				
-				case 2:
-				{
-					System.out.println("\nTicketbooth #2\n----------------------\n"+ Tb3);
-					correct = false;
-					break;
-				}
-				
-				case 3:
-				{
-					System.out.println("\nTicketbooth #3\n----------------------\n"+ Tb4);
-					correct = false;
-					break;
-				}
-				
-				case 4:
-				{
-					System.out.println("\nTicketbooth #4\n----------------------\n"+ Tb5);
-					correct = false;
-					break;
-					
-				}
-				
-				}
+			case 2: {
+				break;
 			}
-			while(correct ==false || ans.equals("yes"));
-			break;
-		}
-			
+
 			case 3: {
 				if (Tb1.equalNumber(Tb1, Tb2) == true)
 				{
@@ -172,23 +117,58 @@ public class DriverTicketbooth {
 				{
 					System.out.println("Ticketbooths 4 and 5 have $" + Tb4.totalTicket());
 				}
-				if (Tb1.equalNumber(Tb1, Tb4) == true)
-				{
-					System.out.println("Ticketbooths 1 and 4 have $" + Tb1.totalTicket());
-				}
-				if (Tb1.equalNumber(Tb1, Tb5) == true)
-				{
-					System.out.println("Ticketbooths 1 and 5 have $" + Tb1.totalTicket());
-				}
+				
 				else
 				{
 					System.out.println("There are no two Ticketbooths that are equal in ticket value");
 				}
-				
 				break;
 			}
 
 			case 4: {
+				if (Tb1.equalNumber(Tb1, Tb2) == true)
+				{
+					System.out.println("Ticketbooths 1 and 2 have " + T1);
+				}
+				if (Tb1.equalNumber(Tb1, Tb3) == true)
+				{
+					System.out.println("Ticketbooths 1 and 3 have " + T1);
+				}
+				if (Tb1.equalNumber(Tb1, Tb4) == true)
+				{
+					System.out.println("Ticketbooths 1 and 4 have " + T1);
+				}
+				if (Tb1.equalNumber(Tb1, Tb5) == true)
+				{
+					System.out.println("Ticketbooths 1 and 5 have " + T1);
+				}
+				if (Tb2.equalNumber(Tb2, Tb3) == true)
+				{
+					System.out.println("Ticketbooths 2 and 3 have " + T2);
+				}
+				if (Tb2.equalNumber(Tb2, Tb4) == true)
+				{
+					System.out.println("Ticketbooths 2 and 4 have " + T2);
+				}
+				if (Tb3.equalNumber(Tb3, Tb4) == true)
+				{
+					System.out.println("Ticketbooths 3 and 4 have " + T3);
+				}
+				if (Tb3.equalNumber(Tb3, Tb5) == true)
+				{
+					System.out.println("Ticketbooths 3 and 5 have " + T3);
+				}
+				
+				if (Tb4.equalNumber(Tb4, Tb5) == true)
+				{
+					System.out.println("Ticketbooths 4 and 5 have " + T4);
+				}
+				
+				else 
+				{
+					System.out.println("There are no two Ticketbooths with the same tickets distribution");
+				}
+				
 				break;
 			}
 
