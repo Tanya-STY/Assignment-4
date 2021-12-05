@@ -13,20 +13,20 @@ public class DriverTicketbooth {
 		// the same number of OPUS CARDS.
 		Tickets T1 = new Tickets(4, 3, 2, 1, 0); // 33.5$
 		Tickets T2 = new Tickets(4, 3, 2, 1, 0);
-		OPUSCard O1 = new OPUSCard("STM", 2023, 10);
-		OPUSCard O2 = new OPUSCard("STM", 2022, 11);
-		OPUSCard O3 = new OPUSCard("STM", 2023, 10);
-		OPUSCard O4 = new OPUSCard("STM", 2022, 11);
+		OPUSCard O1 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O2 = new OPUSCard("STM",OPUSCard.card_holder, 2022, 11);
+		OPUSCard O3 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O4 = new OPUSCard("STM",OPUSCard.card_holder, 2022, 11);
 		OPUSCard[] array_1 = { O1, O2 };
 		OPUSCard[] array_2 = { O3, O4 };
 		Ticketbooth Tb1 = new Ticketbooth(T1, array_1);
 		Ticketbooth Tb2 = new Ticketbooth(T2, array_2);
 
 		Tickets T3 = new Tickets(1, 4, 0, 2, 0); // 33.5 $, t3 = t1 (value)
-		OPUSCard O5 = new OPUSCard("STM", 2023, 10);
-		OPUSCard O6 = new OPUSCard("TMS", 2023, 10);
-		OPUSCard O7 = new OPUSCard("MTS", 2023, 10);
-		OPUSCard O8 = new OPUSCard("MTS", 2023, 10);
+		OPUSCard O5 = new OPUSCard("STM",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O6 = new OPUSCard("TMS",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O7 = new OPUSCard("MTS",OPUSCard.card_holder, 2023, 10);
+		OPUSCard O8 = new OPUSCard("MTS",OPUSCard.card_holder, 2023, 10);
 		OPUSCard[] array_3 = { O5, O6, O7, O8 };
 		Ticketbooth Tb3 = new Ticketbooth(T3, array_3);
 		
