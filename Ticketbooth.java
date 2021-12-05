@@ -93,8 +93,8 @@ public class Ticketbooth {
 	// method to update the expiry month and year of an opus card
 	public void updateExpiry (int year, int month, int y)
 	{
-		→Card[i].setExp_Month(month);
-		→Card[i].setExp_Year(year);
+		Card[y].setExp_Month(month);
+		Card[y].setExp_Year(year);
 	}
 	
 	// Method that adds tickets to ticket booth
