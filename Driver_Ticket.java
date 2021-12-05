@@ -220,7 +220,7 @@ public class Driver_Ticket {
 			case 6: {
 				while (switch_valid)
 				{
-					System.out.println("\nWhich Ticketbooth would you like to add an OPUS card to? (Enter number 0 to 4): ");
+					System.out.print("\nWhich Ticketbooth would you like to add an OPUS card to? (Enter number 0 to 4): ");
 					Tb_choice = sc.nextInt()-1;
 					
 				//ticketbooth #0	
