@@ -72,10 +72,65 @@ public class DriverTicketbooth {
 				break;
 			}
 
-			case 2: {
-				break;
+			case 2: {	
+			boolean correct;
+			System.out.print("Which Ticketbooth do you want to see the content of? (Enter number 0 to 4): "); 
+			
+			do
+			{
+			int choice_tb2 = sc.nextInt();
+				if(choice_tb2>=0 && choice_tb2<=4)
+					correct = true;
+				else
+				{
+					correct=false;
+					System.out.println("Sorry but there is no Ticketbooth number " + choice_tb2);
+				}
+				
+			switch(choice_tb2)
+				{
+				case 0:
+				{
+					System.out.println("\nTicketbooth #0\n----------------------\n"+ Tb1);	
+					correct = false;
+					break;
+				}
+				
+				case 1:
+				{
+					System.out.println("\nTicketbooth #1\n----------------------\n"+ Tb2 );
+					correct = false;
+					break;
+				}
+				
+				case 2:
+				{
+					System.out.println("\nTicketbooth #2\n----------------------\n"+ Tb3);
+					correct = false;
+					break;
+				}
+				
+				case 3:
+				{
+					System.out.println("\nTicketbooth #3\n----------------------\n"+ Tb4);
+					correct = false;
+					break;
+				}
+				
+				case 4:
+				{
+					System.out.println("\nTicketbooth #4\n----------------------\n"+ Tb5);
+					correct = false;
+					break;
+					
+				}
+				
+				}
 			}
-
+			while(correct ==false || ans.equals("yes"));
+			break;
+		}
+			
 			case 3: {
 				if (Tb1.equalNumber(Tb1, Tb2) == true)
 				{
