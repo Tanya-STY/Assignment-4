@@ -8,6 +8,18 @@ public class Driver_Ticket {
 		System.out.println("Welcome to The Ticketbooth Simulator!");
 		Boolean valid;
 		String ans= "";
+		
+		// 1st ticketbooth: 2 ticketbooths have exactly the same ticket distribution and the same number of OPUS CARDS. 
+		 Tickets T1 = new Tickets(4,3,2,1,0); //33.5$
+      		 Tickets T2 = new Tickets(4,3,2,1,0);
+       		 OPUSCard O1 = new OPUSCard("STM", "Jeff Wright", 2023, 10);
+       		 OPUSCard O2 = new OPUSCard("STM", "Karen Stevens", 2022, 11);
+       		 OPUSCard O3 = new OPUSCard("STM", "Jeff Wright", 2023, 10);
+        	 OPUSCard O4 = new OPUSCard("STM", "Karen Stevens", 2022, 11);
+        	 OPUSCard[] array_1 = {O1,O2};
+        	 OPUSCard[] array_2 = {O3,O4};
+      		 Ticketbooth Tb1 = new Ticketbooth(T1, array_1);
+       		 Ticketbooth Tb2 = new Ticketbooth(T2, array_2);
 	
 
 	do 
@@ -41,7 +53,15 @@ public class Driver_Ticket {
 		{
 		
 		case 1:
-		{	
+		{
+			System.out.println("Content of all Ticketbooths:");
+                        System.out.println("-----------------------------");
+                        System.out.println("\nTicketbooth #1\n----------------------\n"+tb1);
+                        System.out.println("\nTicketbooth #2\n----------------------"+tb2);
+                        System.out.println("\nTicketbooth #3\n----------------------"+tb3);
+                        System.out.println("\nTicketbooth #4\n----------------------"+tb4);
+                        System.out.println("\nTicketbooth #5\n----------------------"+tb5);
+                        break;
 			break;
 		}
 		
