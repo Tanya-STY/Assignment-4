@@ -114,7 +114,11 @@ public class Ticketbooth {
 	
 	public String toString() 
 	{
-		StringBuilder sc = new StringBuilder("").append(Ticket).append('\n');
+		StringBuilder sc = new StringBuilder();
+		sc.append(" ");
+		sc.append(Ticket);
+		sc.append('\n');
+		
 		if (Card.length == 0)
 		{
 			sc.append("\nNo OPUS Cards");
@@ -122,10 +126,10 @@ public class Ticketbooth {
 		else
 			for (int i = 0; i < Card.length; i++)
 			{
-				sc.append("\n").append(Card[i].toString());
+				sc.append("\n");
+				sc.append(Card[i].toString());
 			}
 	
 	return sc.toString();			
 	}	
-
 }
