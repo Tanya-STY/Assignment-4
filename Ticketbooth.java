@@ -12,7 +12,7 @@ public class Ticketbooth {
 	public Ticketbooth(Tickets Ticket, OPUSCard[] Cards) 
 	{
 		Ticket = new Tickets(Ticket);
-		Card = new OPUSCard[Card.length]; 
+		Card = new OPUSCard[Cards.length]; 
 		for (int i = 0; i < Card.length; i++)
 		{
 			Cards[i] = Card[i];
