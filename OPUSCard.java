@@ -1,7 +1,7 @@
 public class OPUSCard {
 	
 	private String card_type;
-	private String card_holder;
+	static String card_holder;
 	private int    exp_month;
 	private int exp_year;
 	
