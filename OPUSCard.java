@@ -79,14 +79,11 @@ public class OPUSCard {
 	public String toString()
 	{
 		if(exp_month<10) 
-			return "The type of OPUS card: " + card_type +
-					"\n The name of the owner: " + card_holder +
-					"\n The expiry date: 0" + exp_month + "/" + exp_year;
+			return card_type + " - " + card_holder + " - 0" + exp_month + "/" + exp_year;
 		
 		else
-			return "The type of OPUS card: " + card_type +
-					"\n The name of the owner: " + card_holder +
-					"\n The expiry date: " + exp_month + "/" + exp_year;
+			return card_type + " - " + card_holder + " - " + exp_month + "/" + exp_year;
+					
 		
 	}
 	
