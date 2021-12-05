@@ -132,4 +132,8 @@ public class Ticketbooth {
 	
 	return sc.toString();			
 	}	
+public String breakdown_toString()
+	{
+		return Ticket.toString();
+	}
 }
