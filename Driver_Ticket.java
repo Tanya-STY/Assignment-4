@@ -218,6 +218,119 @@ public class Driver_Ticket {
 			}
 
 			case 6: {
+				while (switch_valid)
+				{
+					System.out.println("\nWhich Ticketbooth would you like to add an OPUS card to? (Enter number 0 to 4): ");
+					Tb_choice = sc.nextInt()-1;
+					
+				//ticketbooth #0	
+					if(Tb_choice ==0)
+					{
+						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
+						String tb6_type = sc.next();
+						System.out.print(" --> Full name on OPUS card: ");
+						String tb6_name = sc.nextLine();
+						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						int tb6_expMonth = sc.nextInt();
+						int tb6_expYear = sc.nextInt();
+						
+						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
+						int length_card = Tb1.addOpusCard(newOpus);
+						
+						System.out.println("You now have " + (length_card) + " OPUS cards.");
+						System.out.println(Tb1.toString());
+						switch_valid = false;
+						break;
+					}
+					
+				//ticketbooth #1
+					if(Tb_choice ==1)
+					{
+						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
+						String tb6_type = sc.next();
+						System.out.print(" --> Full name on OPUS card: ");
+						String tb6_name = sc.nextLine();
+						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						int tb6_expMonth = sc.nextInt();
+						int tb6_expYear = sc.nextInt();
+						
+						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
+						int length_card = Tb2.addOpusCard(newOpus);
+						
+						System.out.println("You now have " + (length_card) + " OPUS cards.");
+						System.out.println(Tb2.toString());
+						switch_valid = false;
+						break;
+					}
+					
+				//ticketbooth #2
+					if(Tb_choice ==2)
+					{
+						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
+						String tb6_type = sc.next();
+						System.out.print(" --> Full name on OPUS card: ");
+						String tb6_name = sc.nextLine();
+						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						int tb6_expMonth = sc.nextInt();
+						int tb6_expYear = sc.nextInt();
+						
+						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
+						int length_card = Tb3.addOpusCard(newOpus);
+						
+						System.out.println("You now have " + (length_card) + " OPUS cards.");
+						System.out.println(Tb3.toString());
+						switch_valid = false;
+						break;
+					}
+					
+				//ticketbooth #3
+					if(Tb_choice ==3)
+					{
+						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
+						String tb6_type = sc.next();
+						System.out.print(" --> Full name on OPUS card: ");
+						String tb6_name = sc.nextLine();
+						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						int tb6_expMonth = sc.nextInt();
+						int tb6_expYear = sc.nextInt();
+						
+						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
+						int length_card = Tb4.addOpusCard(newOpus);
+						
+						System.out.println("You now have " + (length_card) + " OPUS cards.");
+						System.out.println(Tb4.toString());
+						switch_valid = false;
+						break;
+					}
+					
+				//ticketbooth #4
+					if(Tb_choice ==4)
+					{
+						System.out.println("Please enter the following information so that we may complete the transaction - ");
+						System.out.print(" --> Type of OPUS card (STL, RTL, etc ...): ");
+						String tb6_type = sc.next();
+						System.out.print(" --> Full name on OPUS card: ");
+						String tb6_name = sc.nextLine();
+						System.out.print(" --> Expiry month number and year (separate by a space): ");
+						int tb6_expMonth = sc.nextInt();
+						int tb6_expYear = sc.nextInt();
+						
+						OPUSCard newOpus = new OPUSCard(tb6_type, tb6_name, tb6_expMonth, tb6_expYear);
+						int length_card = Tb5.addOpusCard(newOpus);
+						
+						System.out.println("You now have " + (length_card) + " OPUS cards.");
+						System.out.println(Tb5.toString());
+						switch_valid = false;
+						break;
+					}
+					
+				}
+				
+				
 				break;
 			}
 
