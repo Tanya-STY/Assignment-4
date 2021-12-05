@@ -180,6 +180,10 @@ public class DriverTicketbooth {
 				{
 					System.out.println("Ticketbooths 1 and 5 have $" + Tb1.totalTicket());
 				}
+				else
+				{
+					System.out.println("There are no two Ticketbooths that are equal in ticket value");
+				}
 				
 				break;
 			}
