@@ -1,5 +1,18 @@
+// -------------------------------------------------------
+// Assignment 4
+// Written by: Shamma Sarah Markis (ID#) and Tanya So Tin Yan (ID# 40208954)
+// For COMP 248 Section PJ-X – Fall 2021
+// --------------------------------------------------------
+
+/* General explanation of what my program does:
+ *   The OPUSCard class includes all the methods related to the
+ *   different types of opus cards such as RTL, REM, STM, etc. This 
+ *   class also takes into account the name of the card holder, 
+ *   the expiry month and the expiry year.  */
+
 public class OPUSCard {
 	
+	//
 	private String card_type;
 	private String card_holder;
 	private int exp_month;
