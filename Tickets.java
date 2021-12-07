@@ -2,7 +2,7 @@
 public class Tickets {
 	
 	private static double	regular_ticket = 3.50;	
-	private static double	junior_ticket  = 2.00;
+	private static double	junior_ticket  = 2.50;
 	private static double	senior_ticket  = 1.00;
 	private static double 	daily_ticket   = 10.00;
 	private static double	weekly_ticket  = 40.00;	
@@ -21,23 +21,23 @@ public class Tickets {
 		this.nb_WeeklyTicket 	= 0;
 	}
 	
-	public Tickets (int a, int b, int c, int d, int e)
+	public Tickets (int nb_RegTicket, int nb_JunTicket, int nb_SenTicket, int nb_DailyTicket, int nb_WeeklyTicket)
 	{
-		this.nb_RegTicket      = a;
-		this.nb_JunTicket      = b;
-		this.nb_SenTicket      = c;
-		this.nb_DailyTicket    = d;
-		this.nb_WeeklyTicket  = e;
+		this.nb_RegTicket      = nb_RegTicket;
+		this.nb_JunTicket      = nb_JunTicket;
+		this.nb_SenTicket      = nb_SenTicket;
+		this.nb_DailyTicket    = nb_DailyTicket;
+		this.nb_WeeklyTicket   = nb_WeeklyTicket;
 	}
 	
 	//copy constructor
-	public Tickets (Tickets a)
+	public Tickets (Tickets Ticket)
 	{
-		this.nb_RegTicket = a.nb_RegTicket;
-		this.nb_JunTicket  = a.nb_JunTicket;
-		this.nb_SenTicket   = a.nb_SenTicket ;
-		this.nb_DailyTicket   = a.nb_DailyTicket;
-		this.nb_WeeklyTicket  = a.nb_WeeklyTicket;
+		this.nb_RegTicket = Ticket.nb_RegTicket;
+		this.nb_JunTicket  = Ticket.nb_JunTicket;
+		this.nb_SenTicket   = Ticket.nb_SenTicket ;
+		this.nb_DailyTicket   = Ticket.nb_DailyTicket;
+		this.nb_WeeklyTicket  = Ticket.nb_WeeklyTicket;
 	}
 	
 	//Accessor and mutator
@@ -94,33 +94,29 @@ public class Tickets {
 	
 	
 	//add tickets
-	public void addTickets (int a, int b, int c, int d, int e)
+	public void addTickets (int nb_RegTicket, int nb_JunTicket, int nb_SenTicket, int nb_DailyTicket, int nb_WeeklyTicket)
 	{
-		this.nb_RegTicket      += a;
-		this.nb_JunTicket      += b;
-		this.nb_SenTicket      += c;
-		this.nb_DailyTicket    += d;
-		this.nb_WeeklyTicket   += e;
+		this.nb_RegTicket      += nb_RegTicket;
+		this.nb_JunTicket      += nb_JunTicket;
+		this.nb_SenTicket      += nb_SenTicket;
+		this.nb_DailyTicket    += nb_DailyTicket;
+		this.nb_WeeklyTicket   += nb_WeeklyTicket;
 	}
 	
 	//tickets total
 	public double ticketsTotal()
 	{
 		return (regular_ticket*nb_RegTicket) + 
-		       (junior_ticket*nb_JunTicket) + 
-		       (senior_ticket*nb_SenTicket) +
-		       (daily_ticket*nb_DailyTicket) + 
-		       (weekly_ticket*nb_WeeklyTicket);
+			   (junior_ticket*nb_JunTicket) + 
+			   (senior_ticket*nb_SenTicket) +
+			   (daily_ticket*nb_DailyTicket) + 
+			   (weekly_ticket*nb_WeeklyTicket);
 	}
 	
 	public String toString()
 	{
-	return "Tickets:\n" + 
-			this.nb_RegTicket + " regular tickets\n" +
-			this.nb_RegTicket  + " junior tickets\n" +
-			this.nb_SenTicket  + " senior tickets\n" +
-			this.nb_DailyTicket   + " daily tickets\n " +
-			this.nb_WeeklyTicket  + "weekly tickets\n";
+	return this.nb_RegTicket + " x $" + regular_ticket + " + " + this.nb_RegTicket + " x $" + junior_ticket + " + " + this.nb_SenTicket  + " x $" + senior_ticket + " + " + 
+			this.nb_DailyTicket  + " x $" + daily_ticket + " + " + this.nb_WeeklyTicket + " x $" + weekly_ticket;
 	}
 	
 	//equal method
