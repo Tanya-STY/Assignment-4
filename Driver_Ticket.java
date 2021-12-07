@@ -1,3 +1,14 @@
+// -------------------------------------------------------
+// Assignment 4
+// Written by: Shamma Sarah Markis (ID# 40211998) and Tanya So Tin Yan (ID# 40208954)
+// For COMP 248 Section PJ-X – Fall 2021
+// --------------------------------------------------------
+
+/* General explanation of what my program does:
+ *   This is the ticketbooth driver which enables the user to a Ticketbooth simulator in which 
+ *   he/she can access different types and quantities of tickets and OPUS cards. The user also has
+ *   many other options like updating an expired date, adding new tickets and Opus cards, and many more. */
+
 import java.util.Scanner;
 
 public class Driver_Ticket {
