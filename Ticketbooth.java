@@ -11,7 +11,7 @@ public class Ticketbooth {
 
 	public Ticketbooth(Tickets Ticket, OPUSCard[] Cards) 
 	{
-		Ticket = new Tickets(Ticket);
+		this.Ticket = Ticket;
 		Card = new OPUSCard[Cards.length]; 
 		for (int i = 0; i < Cards.length; i++)
 		{
@@ -19,16 +19,16 @@ public class Ticketbooth {
 		}
 	}
 	// method that verifies if the values of two ticketbooths are the same
-	public boolean equalValues(Ticketbooth T1, Ticketbooth T2) {
-		if (T1.Ticket.ticketsTotal() == T2.Ticket.ticketsTotal()) {
+	public boolean equalValues(Ticketbooth T) {
+		if (this.Ticket.ticketsTotal() == T.Ticket.ticketsTotal()) {
 			return true;
 		}
 		return false;
 	}
 	// method that verifies if the number of each type of tickets of two ticketbooths are the same
-	public boolean equalNumber(Ticketbooth T1, Ticketbooth T2)
+	public boolean equalNumber(Ticketbooth T)
 	{
-		if (T1.Ticket.equals(Ticket) == T2.Ticket.equals(Ticket)) {
+		if (this.Ticket.equals(Ticket) == T.Ticket.equals(Ticket)) {
 			return true;
 		}
 		return false;
@@ -46,25 +46,25 @@ public class Ticketbooth {
 	
 	// method that adds a new opus card to a ticketbooth and returns the number of opus cards after the addition
 	
-	public int addOpusCard(OPUSCard cardA)
+	public int addOpusCard(OPUSCard card)
 	{
-		if (Card.length == 0) 
+		for (int i = 0; i < Card.length; i++)
 		{
-			OPUSCard[] addition = new OPUSCard[1];
-			addition[0] = cardA;
-			Card = addition;
-			return Card.length;
+			if (Card[i] == null) {
+			Card[i] = card;
+			return (i + 1);
+			}
 		}
-		
-		else {
+		//else {
 			OPUSCard[] addition = new OPUSCard[Card.length + 1];
-			for (int i = 0; i < Card.length; i++) {
+			int i;
+			for (i = 0; i < Card.length; i++) {
 				addition[i] = Card[i];
 			}
-			addition[addition.length - 1] = cardA;
+			addition[i] = card;
 			Card = addition;
-			return Card.length;
-		}
+			return (i + 1);
+		//}
 	}
 	
 	// method that removes an opus card from the ticketbooth, returns true if the removal is succesful
@@ -72,45 +72,46 @@ public class Ticketbooth {
 	public boolean removeCard(int minus)
 	{
 		int count = 0;
-		if (Card.length == 0)
-		{
+		if (Card.length == 0) {
 			return false;
 		}
-		else {
-			OPUSCard[] addition = new OPUSCard[Card.length-1];
-			for (int i = 0; i < (Card.length); i++)
-			{
-				if (i != minus)
+			OPUSCard[] addition = new OPUSCard[Card.length - 1];
+			for (int j = 0; j < Card.length; j++)
+			{	
+				if (j != minus)
 				{
-					addition[count] = Card[i];
-					count ++;
+					addition[count] = Card[j];
+					count++;
 				}
 			}
 			Card = addition;
 			return true;
 		}
-	}
 	// method to update the expiry month and year of an opus card
-	public void updateExpiry (int year, int month, int y)
+	public void updateExpiry (int exp_year, int exp_month, String y)
 	{
-		Card[y].setExp_Month(month);
-		Card[y].setExp_Year(year);
+		for (int i = 0; i < Card.length; i++)
+		{
+		Card[i].setExp_Month(exp_month);
+		Card[i].setExp_Year(exp_year);
+		}
 	}
 	
 	// Method that adds tickets to ticket booth
-	public double  addTickets (int a, int b, int c, int d, int e) 
+	public double  addTickets (int nb_RegTicket, int nb_JunTicket, int nb_SenTicket, int nb_DailyTicket, int nb_WeeklyTicket) 
 	{
-		Ticket.addTickets(a,b,c,d,e);
+		Ticket.addTickets(nb_RegTicket, nb_JunTicket, nb_SenTicket, nb_DailyTicket, nb_WeeklyTicket);
 		return Ticket.ticketsTotal();
 	}
 	// method that verifies if the total value of tickets and the number of opus cards tickets of two ticketbooth objects are equal
-	public boolean equalAll(Ticketbooth one, Ticketbooth two) {
-		if (!equalValues(one,two)) 
-		{
-			return false;
+	public boolean equalAll(Ticketbooth ticketbooth) {
+		if ((this.Ticket.getNb_RegTicket() + this.Ticket.getNb_JunTicket() + this.Ticket.getNb_SenTicket() + this.Ticket.getNb_DailyTicket() +
+			 this.Ticket.getNb_WeeklyTicket() == ticketbooth.Ticket.getNb_RegTicket() + ticketbooth.Ticket.getNb_JunTicket() + ticketbooth.Ticket.getNb_SenTicket() +
+			 ticketbooth.Ticket.getNb_DailyTicket() + ticketbooth.Ticket.getNb_WeeklyTicket()) && this.Card.length == ticketbooth.Card.length)
+				return true;
+		return false;	
 		}
-		return one.totalOpusNum() == two.totalOpusNum();
-	}
+	
 	
 	public String toString() 
 	{
@@ -146,3 +147,6 @@ public class Ticketbooth {
 	}
 
 }
+	
+	
+    
