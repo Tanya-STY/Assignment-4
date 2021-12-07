@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Driver_Ticket {
 	public static void main(String[] args) {
-
+//Welcome message
 		System.out.println("=======================================================================\n\n"
 				+ "\tWelcome to Concordia Fall Geek's Ticketbooth Application\n\n"
 				+ "=======================================================================");
-
+//Ticketbooth 0
 		Tickets tickets1 = new Tickets(5, 1, 0, 1, 1);
 		OPUSCard[] opusCards1 = { new OPUSCard("STL-", "M. Cola-", 6, 2023),
 				new OPUSCard("RTL-", "C. Venus-", 3, 2025) };
@@ -15,21 +15,22 @@ public class Driver_Ticket {
 		Ticketbooth[] ticketbooths = new Ticketbooth[5];
 		ticketbooths[0] = new Ticketbooth(tickets1, opusCards1);
 		ticketbooths[1] = new Ticketbooth(tickets1, opusCards2);
-
+//Ticketbooth 1
 		Tickets tickets2 = new Tickets(5, 3, 5, 5, 0);
 		OPUSCard[] opusCards3 = { new OPUSCard("RTL-", "F. Max-", 12, 2021), new OPUSCard("REM-", "T. Flona", 4, 2023),
 				new OPUSCard("TRAMREM-", "S. EaFL", 11, 2021) };
 
 		ticketbooths[2] = new Ticketbooth(tickets2, opusCards3);
-
+//Ticketbooth 2
 		Tickets tickets3 = new Tickets(0, 2, 1, 1, 1);
 		OPUSCard[] opusCards4 = {};
-
+//Ticketbooths 3 and 4
 		ticketbooths[3] = new Ticketbooth(tickets3, opusCards4);
 		ticketbooths[4] = new Ticketbooth(tickets3, opusCards4);
 
 		boolean quit = true;
 
+//Print the table of contents
 		while (quit) {
 			System.out.println("\nWhat would you like to do?");
 			System.out.println("\t1. See the content of all ticketbooths");
@@ -47,7 +48,9 @@ public class Driver_Ticket {
 			Scanner sc = new Scanner(System.in);
 			int choice = sc.nextInt();
 
+//Switch case based on the user's choice from the table of content
 			switch (choice) {
+		//See the content of all the Ticketbooths	
 			case 1: {
 
 				System.out.println("Content of each Ticketbooth:");
@@ -59,6 +62,7 @@ public class Driver_Ticket {
 				}
 				break;
 			}
+		//See the content of one selected Ticketbooth			
 			case 2: {
 				Scanner scanner = new Scanner(System.in);
 				System.out.print("Which Ticketbooth do you want to see the content of? (Enter the number 0 to 4): ");
@@ -71,6 +75,7 @@ public class Driver_Ticket {
 				System.out.println(ticketbooths[n].toString());
 				break;
 			}
+		//See the list of Ticketbooths with the same amount of tickets' values
 			case 3: {
 				System.out.println("List of Ticketbooths with same amount of money:\n");
 				for (int i = 0; i < ticketbooths.length; i++) {
@@ -81,6 +86,7 @@ public class Driver_Ticket {
 				}
 			}
 				break;
+		//See the list of Ticketbooths with same Tickets amount			
 			case 4: {
 				System.out.println("List of Ticketbooths with same Tickets amount:\n");
 				for (int i = 0; i < ticketbooths.length; i++) {
@@ -98,6 +104,7 @@ public class Driver_Ticket {
 
 				break;
 			}
+		//See the list of Ticketbooths with same amount of tickets values and same number of OPUS cards
 			case 5: {
 				System.out.println("List of Ticketbooths with same amount of tickets values and same number of OPUS cards:");
 				for (int i = 0; i < ticketbooths.length; i++) {
@@ -110,6 +117,7 @@ public class Driver_Ticket {
 				}
 				break;
 			}
+		//Case in which the user can add an OPUS card to an existing Ticketbooth
 			case 6: {
 				Scanner scanner = new Scanner(System.in);
 				System.out.print("Which Ticketbooth do you want to add a OPUS card to? (Enter number 0 to 4): ");
@@ -135,6 +143,7 @@ public class Driver_Ticket {
 				System.out.println("You now have " + ticketbooths[TickChoice].addOpusCard(new OPUSCard(opusType, cardHolder, month, year)) + " OPUS cards");
 				break;
 			}
+		//Case in which the user removes an existing OPUS card from a Ticketbooth
 			case 7: {
 				Scanner scanner = new Scanner(System.in);
 				System.out.print("Which Ticketbooth do you want to remove a OPUS card from? (Enter number 0 to 4): ");
@@ -149,7 +158,7 @@ public class Driver_Ticket {
 				}
 				break;
 			}
-			
+		//Case in which the user can update the expiry date of an existing OPUS card
 			case 8: {
 				
 				int AddCard;
@@ -294,6 +303,7 @@ public class Driver_Ticket {
 				
 				break;
 			}
+		//Case in which the user can add Tickets to a Ticketbooth
 			case 9: {
 				Scanner scanner = new Scanner(System.in);
 				System.out.print("Which Ticketbooth do you want to add tickets to? (Enter number 0 to 4): ");
@@ -308,6 +318,7 @@ public class Driver_Ticket {
 				System.out.print("You now have $" + ticketbooths[n].addTickets(regular, junior, senior, daily, weekly) + '\n');
 				break;
 			}
+		//Switch case to leave the application
 			case 0:
 				quit = false;
 				System.out.println("Thank you for using Concordia Fall Geek's Ticketbooth application!!");
