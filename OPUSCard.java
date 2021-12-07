@@ -11,12 +11,14 @@
  *   the expiry month and the expiry year.  */
 
 public class OPUSCard {
-	
+
+	//Attributes
 	private String card_type;
 	private String card_holder;
 	private int exp_month;
 	private int exp_year;
 	
+	//Default Constructor
 	public OPUSCard()
 	{
 		this.card_type    = null;
@@ -25,7 +27,7 @@ public class OPUSCard {
 		this.exp_year    = 0;
 	}
 	
-	//constructor with 4 parameters
+	//Constructor with 4 parameters
 	public OPUSCard(String card_type, String card_holder, int exp_month, int exp_year)
 	{
 		this.card_type   = card_type;
@@ -40,7 +42,7 @@ public class OPUSCard {
 			this.exp_month = exp_month;
 	}
 	
- //copy constructor
+ 	//Copy Constructor
 	public  OPUSCard(OPUSCard b)
 	{
 		this.card_type   = b.card_type;
@@ -49,7 +51,7 @@ public class OPUSCard {
 		this.exp_year    = b.exp_year;
 	}
 
-	//accessor and mutators methods
+	//Accessor methods
 	
 	public String getCard_Type()
 	{
@@ -71,6 +73,7 @@ public class OPUSCard {
 		return exp_year;
 	}
 	
+	//Mutator for the expiry month
 	public void setExp_Month(int exp_month)
 	{
 		if (exp_month < 1 || exp_month > 12)
@@ -81,13 +84,14 @@ public class OPUSCard {
 			this.exp_month = exp_month;
 	}
 	
+	//Mutator for the expiry year
 	public void setExp_Year(int exp_year)
 	{
 		this.exp_year = exp_year;
 	}
 	
 	//if the month number is less than 10, it must be preceded by a zero
-	
+	//toString() method to indicate the type of OPUS card, the name of the card holder, and the expiry date
 	public String toString()
 	{
 		if(exp_month<10) 
@@ -98,6 +102,7 @@ public class OPUSCard {
 		
 	}
 	
+	//equals() method to compare if two objects of type OPUSCard are identical
 	public boolean OPUSEqual(OPUSCard something)
 	{
 		
