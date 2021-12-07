@@ -12,18 +12,22 @@
  *   the total of cost of each ticketbooth. */
 
 public class Tickets {
-	
+
+	//Static Constants: values of the tickets
 	private static double	regular_ticket = 3.50;	
 	private static double	junior_ticket  = 2.50;
 	private static double	senior_ticket  = 1.00;
 	private static double 	daily_ticket   = 10.00;
 	private static double	weekly_ticket  = 40.00;	
+	
+	//Private variables for the number of tickets
 	private int nb_RegTicket;
 	private int nb_JunTicket;
 	private int nb_SenTicket;
 	private int nb_DailyTicket;
 	private int nb_WeeklyTicket;
 	
+	//The Default Constructor
 	public Tickets()
 	{
 		this.nb_RegTicket       = 0;
@@ -33,6 +37,7 @@ public class Tickets {
 		this.nb_WeeklyTicket 	= 0;
 	}
 	
+	//The Constructor with 5 parameters
 	public Tickets (int nb_RegTicket, int nb_JunTicket, int nb_SenTicket, int nb_DailyTicket, int nb_WeeklyTicket)
 	{
 		this.nb_RegTicket      = nb_RegTicket;
@@ -42,7 +47,7 @@ public class Tickets {
 		this.nb_WeeklyTicket   = nb_WeeklyTicket;
 	}
 	
-	//copy constructor
+	//Copy Constructor
 	public Tickets (Tickets Ticket)
 	{
 		this.nb_RegTicket = Ticket.nb_RegTicket;
@@ -52,7 +57,7 @@ public class Tickets {
 		this.nb_WeeklyTicket  = Ticket.nb_WeeklyTicket;
 	}
 	
-	//Accessor and mutator
+	//Accessors and mutators
 	
 	public int getNb_RegTicket()
 	{
@@ -105,7 +110,7 @@ public class Tickets {
 	}
 	
 	
-	//add tickets
+	//addTickets() method: increase the number of each tickets by the indicated number
 	public void addTickets (int nb_RegTicket, int nb_JunTicket, int nb_SenTicket, int nb_DailyTicket, int nb_WeeklyTicket)
 	{
 		this.nb_RegTicket      += nb_RegTicket;
@@ -115,7 +120,7 @@ public class Tickets {
 		this.nb_WeeklyTicket   += nb_WeeklyTicket;
 	}
 	
-	//tickets total
+	//ticketsTotal() method: total value of the tickets in the ticketbooth 
 	public double ticketsTotal()
 	{
 		return (regular_ticket*nb_RegTicket) + 
@@ -125,13 +130,14 @@ public class Tickets {
 			   (weekly_ticket*nb_WeeklyTicket);
 	}
 	
+	//toString() method: indicating the count of each ticket in the ticketbooth
 	public String toString()
 	{
 	return this.nb_RegTicket + " x $" + regular_ticket + " + " + this.nb_RegTicket + " x $" + junior_ticket + " + " + this.nb_SenTicket  + " x $" + senior_ticket + " + " + 
 			this.nb_DailyTicket  + " x $" + daily_ticket + " + " + this.nb_WeeklyTicket + " x $" + weekly_ticket;
 	}
 	
-	//equal method
+	//equals() method: check if two objects of type Tickets have the same distribution
 	public boolean equals (Tickets same)
 	{
 	return (this.nb_RegTicket   == same.nb_RegTicket &&
