@@ -101,7 +101,7 @@ public class Ticketbooth {
 			return true;
 		}	else
 			return false;
-	}
+	}}
 	// method to update the expiry month and year of an opus card
 	public void updateExpiry (int exp_year, int exp_month, String y)
 	{
