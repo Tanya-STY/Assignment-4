@@ -1,3 +1,15 @@
+// -------------------------------------------------------
+// Assignment 4
+// Written by: Shamma Sarah Markis (ID#) and Tanya So Tin Yan (ID# 40208954)
+// For COMP 248 Section PJ-X – Fall 2021
+// --------------------------------------------------------
+
+/* General explanation of what my program does:
+ *   The Tickets class includes the constants variables which represent the cost for each type
+ *   of ticket. It also takes into account the number of tickets for each type ticket which will 
+ *   later be used in the driver; in order to get different quantity of tickets for each ticketbooth.
+ *   This class also takes into account the total tickets which can be used in the driver to find 
+ *   the total of cost of each ticketbooth. */
 
 public class Tickets {
 	
