@@ -81,22 +81,25 @@ public class Ticketbooth {
 	
 	public boolean removeCard(int minus)
 	{
-		int count = 0;
-		if (Card.length == 0) {
-			return false;
-		}
+		{
+		if (Card.length > 0) {	
+			int count = 0;
 			OPUSCard[] addition = new OPUSCard[Card.length - 1];
 			for (int j = 0; j < Card.length; j++)
 			{	
-				if (j != minus)
-				{
+				if (j == 0) 
+					continue;
+				else {
+				if (count != 0)
+					count++; 
 					addition[count] = Card[j];
-					count++;
 				}
 			}
 			Card = addition;
 			return true;
-		}
+		}	else
+			return false;
+	}
 	// method to update the expiry month and year of an opus card
 	public void updateExpiry (int exp_year, int exp_month, String y)
 	{
