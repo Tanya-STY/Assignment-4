@@ -12,7 +12,6 @@
 
 public class OPUSCard {
 	
-	//
 	private String card_type;
 	private String card_holder;
 	private int exp_month;
@@ -99,7 +98,7 @@ public class OPUSCard {
 		
 	}
 	
-	public boolean Equal(OPUSCard something)
+	public boolean OPUSEqual(OPUSCard something)
 	{
 		
 		return((this.card_type == something.card_type) &&
@@ -109,6 +108,3 @@ public class OPUSCard {
 	}
 	
 }
-
-	
-
