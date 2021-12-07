@@ -2,6 +2,7 @@
 // Assignment 4
 // Written by: Shamma Sarah Markis (ID# 40211998) and Tanya So Tin Yan (ID# 40208954)
 // For COMP 248 Section PJ-X – Fall 2021
+// Date: December 6th, 2021
 // --------------------------------------------------------
 
 /* General explanation of what my program does:
