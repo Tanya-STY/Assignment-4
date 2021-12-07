@@ -1,6 +1,6 @@
 // -------------------------------------------------------
 // Assignment 4
-// Written by: Shamma Sarah Markis (ID#) and Tanya So Tin Yan (ID# 40208954)
+// Written by: Shamma Sarah Markis (ID# 40211998) and Tanya So Tin Yan (ID# 40208954)
 // For COMP 248 Section PJ-X – Fall 2021
 // --------------------------------------------------------
 
