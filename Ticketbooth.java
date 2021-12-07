@@ -10,6 +10,7 @@
 
 public class Ticketbooth {
 	
+	//Attributes
 	private Tickets Ticket;
 	private OPUSCard[] Card;
 	
@@ -18,7 +19,7 @@ public class Ticketbooth {
 		Ticket = new Tickets(Ticket);
 		Card = new OPUSCard[0]; 
 	}
-
+	
 	public Ticketbooth(Tickets Ticket, OPUSCard[] Cards) 
 	{
 		this.Ticket = Ticket;
