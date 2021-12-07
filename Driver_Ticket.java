@@ -128,7 +128,7 @@ public class Driver_Ticket {
 				System.out.print("---> Full name on OPUS card: ");
 				String cardHolder = scanner.nextLine();
 				
-				System.out.print("---> Expiry month number and year (seperate by a space: ");
+				System.out.print("---> Expiry month number and year (seperate by a space): ");
 				int month = scanner.nextInt();
 				int year = scanner.nextInt();
 				
@@ -142,37 +142,156 @@ public class Driver_Ticket {
 				if (ticketbooths[n].totalOpusNum() == 0)
 					System.out.println("Sorry that Ticketbooth has no cards");
 				else {
-					System.out.print("(Enter card number 0 to 1)");
+					System.out.print("(Enter card number 0 to 1): ");
 					int cardMinus = scanner.nextInt();
 						if (ticketbooths[n].removeCard(cardMinus))
 							System.out.println("Card was removed successfully");
 				}
 				break;
 			}
+			
 			case 8: {
-				Scanner scanner = new Scanner(System.in);
-				System.out.print("Which Ticketbooth do you want to update a OPUS card from? (Enter number 0 to 4): ");
-				int updateName = scanner.nextInt();
-				if (updateName > 4) {
-					System.out.println("Sorry but there is no Ticketbooth number " + updateName);
-					System.out.print("--> Try again: (Enter number 0 to 4): ");
-					updateName = scanner.nextInt();
-					scanner.nextLine();
-				}
-				System.out.print("Which card do you want to update? (Enter card number 0 to 0): ");
-				int n = scanner.nextInt();
-				if (n > 0) {
-					System.out.println("Sorry but there is no card number " + n);
-					System.out.print("--> Try again: (Enter number 0 to 0): ");
-					n = scanner.nextInt();
-					scanner.nextLine();
-				}
-				System.out.print("Enter new expiry month number and year (seperate by a space): ");
-				int month = scanner.nextInt();
-				int year = scanner.nextInt();
-				ticketbooths[n].updateExpiry(year, month, null);
 				
-				System.out.println("Expiry date updated.");
+				int AddCard;
+				int AddCard2;
+				Scanner keyboard = new Scanner(System.in);
+				do
+				{
+					System.out.print("Which ticketbooth do you want to update an OPUS card from? (Enter number 0 to 4): ");
+					AddCard = keyboard.nextInt();
+				}
+				while(AddCard < 0 || AddCard > 4);
+				if(AddCard == 0)
+				{
+					if(opusCards1.length == 0)
+					{
+						System.out.println("The ticketbooth has no cards!\n");
+					}
+					else
+					{
+						System.out.print("Which card do you want to update? (Enter card number 0 to " + (opusCards1.length -1) + "): ");
+						AddCard2 = keyboard.nextInt();
+						while (AddCard2 < 0 || AddCard2 > opusCards1.length - 1 )
+						{
+							System.out.println("The is no card number " + AddCard2);
+							System.out.print("--> Try Again: " + "\n(Enter card number 0 to " + (opusCards1.length -1) + "): ");
+							AddCard2 = keyboard.nextInt();
+						}
+						System.out.print("--> Enter new expiry month number and year (seperate by a space): ");
+						int NewMonth = keyboard.nextInt();
+						int NewYear = keyboard.nextInt();
+						
+						opusCards1[AddCard2].setExp_Month(NewMonth);
+						opusCards1[AddCard2].setExp_Year(NewYear);
+						
+						System.out.println("Expire date updated.\n");
+					}
+				}
+				if(AddCard == 1)
+				{
+					if(opusCards2.length == 0)
+					{
+						System.out.println("The ticketbooth has no cards!\n");
+					}
+					else
+					{
+						System.out.print("Which card do you want to update? (Enter card number 0 to " + (opusCards2.length -1) + "): ");
+						AddCard2 = keyboard.nextInt();
+						while (AddCard2 < 0 || AddCard2 > opusCards2.length - 1 )
+						{
+							System.out.println("The is no card number " + AddCard2);
+							System.out.print("--> Try Again: " + "\n(Enter card number 0 to " + (opusCards2.length -1) + "): ");
+							AddCard2 = keyboard.nextInt();
+						}
+						System.out.print("--> Enter new expiry month number and year (seperate by a space): ");
+						int NewMonth = keyboard.nextInt();
+						int NewYear = keyboard.nextInt();
+						
+						opusCards2[AddCard2].setExp_Month(NewMonth);
+						opusCards2[AddCard2].setExp_Year(NewYear);
+						
+						System.out.println("Expire date updated.\n");
+					}
+				}
+				if(AddCard == 2)
+				{
+					if(opusCards2.length == 0)
+					{
+						System.out.println("The ticketbooth has no cards!\n");
+					}
+					else
+					{
+						System.out.print("Which card do you want to update? (Enter card number 0 to " + (opusCards3.length -1) + "): ");
+						AddCard2 = keyboard.nextInt();
+						while (AddCard2 < 0 || AddCard2 > opusCards3.length - 1 )
+						{
+							System.out.println("The is no card number " + AddCard2);
+							System.out.print("--> Try Again: " + "\n(Enter card number 0 to " + (opusCards3.length -1) + "): ");
+							AddCard2 = keyboard.nextInt();
+						}
+						System.out.print("--> Enter new expiry month number and year (seperate by a space): ");
+						int NewMonth = keyboard.nextInt();
+						int NewYear = keyboard.nextInt();
+						
+						opusCards3[AddCard2].setExp_Month(NewMonth);
+						opusCards3[AddCard2].setExp_Year(NewYear);
+						
+						System.out.println("Expire date updated.\n");
+					}
+				}
+				if(AddCard == 3)
+				{
+					if(opusCards3.length == 0)
+					{
+						System.out.println("The ticketbooth has no cards!\n");
+					}
+					else
+					{
+						System.out.print("Which card do you want to update? (Enter card number 0 to " + (opusCards3.length -1) + "): ");
+						AddCard2 = keyboard.nextInt();
+						while (AddCard2 < 0 || AddCard2 > opusCards3.length - 1 )
+						{
+							System.out.println("The is no card number " + AddCard2);
+							System.out.print("--> Try Again: " + "\n(Enter card number 0 to " + (opusCards3.length -1) + "): ");
+							AddCard2 = keyboard.nextInt();
+						}
+						System.out.print("--> Enter new expiry month number and year (seperate by a space): ");
+						int NewMonth = keyboard.nextInt();
+						int NewYear = keyboard.nextInt();
+						
+						opusCards3[AddCard2].setExp_Month(NewMonth);
+						opusCards3[AddCard2].setExp_Year(NewYear);
+						
+						System.out.println("Expire date updated.\n");
+					}
+				}
+				if(AddCard == 4)
+				{
+					if(opusCards4.length == 0)
+					{
+						System.out.println("The ticketbooth has no cards!\n");
+					}
+					else
+					{
+						System.out.print("Which card do you want to update? (Enter card number 0 to " + (opusCards4.length -1) + "): ");
+						AddCard2 = keyboard.nextInt();
+						while (AddCard2 < 0 || AddCard2 > opusCards4.length - 1 )
+						{
+							System.out.println("The is no card number " + AddCard2);
+							System.out.print("--> Try Again: " + "\n(Enter card number 0 to " + (opusCards4.length -1) + "): ");
+							AddCard2 = keyboard.nextInt();
+						}
+						System.out.print("--> Enter new expiry month number and year (seperate by a space): ");
+						int NewMonth = keyboard.nextInt();
+						int NewYear = keyboard.nextInt();
+						
+						opusCards4[AddCard2].setExp_Month(NewMonth);
+						opusCards4[AddCard2].setExp_Year(NewYear);
+						
+						System.out.println("Expire date updated.\n");
+					}
+				}
+				
 				break;
 			}
 			case 9: {
